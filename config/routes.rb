@@ -1,4 +1,13 @@
 Ggtic::Application.routes.draw do
+  get "recommendations/reindex"
+  resources :recommendations
+
+  get "admin/generate"
+  get "admin/scrape"
+
+
+  resources :instants
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

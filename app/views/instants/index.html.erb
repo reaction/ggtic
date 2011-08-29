@@ -1,0 +1,35 @@
+<h1>Listing instants</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Link</th>
+    <th>Description</th>
+    <th>Popularity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @instants.each do |instant| %>
+	<% logger.debug "Check Instant" %>
+	<% logger.debug instant %>
+	<% if Recommendation.find_by_title(instant.title) %>
+  <tr>
+    <td><%= instant.title %></td>
+    <td><%= instant.link %></td>
+    <td><%= instant.description %></td>
+    <td><%= Recommendation.find_all_by_title(instant.title).count %></td>
+    <td><%= link_to 'Show', instant %></td>
+    <td><%= link_to 'Edit', edit_instant_path(instant) %></td>
+    <td><%= link_to 'Destroy', instant, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+<% end %>
+</table>
+<% @instants.each do |instant| %>
+		<%= y instant %>
+		<br>
+<% end %>
+<br />
+
+<%= link_to 'New Instant', new_instant_path %>

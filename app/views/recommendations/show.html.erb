@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @recommendation.title %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @recommendation.link %>
+</p>
+
+<p>
+  <b>Recommended:</b>
+  <%= @recommendation.recommended %>
+</p>
+
+
+<%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |
+<%= link_to 'Back', recommendations_path %>
+<%= link_to 'New Recommendation', new_recommendation_path %>

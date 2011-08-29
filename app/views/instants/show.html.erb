@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @instant.title %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @instant.link %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @instant.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_instant_path(@instant) %> |
+<%= link_to 'Back', instants_path %>
